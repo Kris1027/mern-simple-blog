@@ -10,7 +10,7 @@ export const getArticles = async (req, res) => {
             data: articles,
         });
     } catch (error) {
-        console.error(`Error while fetching articles: ${error}`);
+        console.error(`Error while fetching articles: ${error.message}`);
         res.status(500).json({ success: false, message: 'Error while fetching articles' });
     }
 };
@@ -53,7 +53,23 @@ export const putArticle = async (req, res) => {
             data: updatedArticle,
         });
     } catch (error) {
-        console.error(`Error while updating article: ${error}`);
+        console.error(`Error while updating article: ${error.message}`);
         res.status(500).json({ success: false, message: 'Error while updating article' });
+    }
+};
+
+export const deleteArticle = async (req, res) => {
+    const { id } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).json({ success: false, message: 'Article not found' });
+    }
+
+    try {
+        await Article.findByIdAndDelete(id);
+        res.status(200).json({ success: true, message: 'Article has been successfully deleted' });
+    } catch (error) {
+        console.error(`Error while deleting article ${error.message}`);
+        res.status(500).json({ success: false, message: 'Error while deleting article' });
     }
 };
