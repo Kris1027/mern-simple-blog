@@ -4,8 +4,9 @@ import { connectDB } from './config/db.js';
 
 const app = express();
 dotenv.config();
-
 const PORT = process.env.PORT;
+
+app.use(express.json());
 
 const startServer = async () => {
     try {
