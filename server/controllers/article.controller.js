@@ -31,7 +31,7 @@ export const postArticle = async (req, res) => {
             data: newArticle,
         });
     } catch (error) {
-        console.error(`Server error ${error.message}`);
-        res.status(500).json({ success: false, message: `Server Error ${error.message}` });
+        console.error(`Error while creating article ${error.message}`);
+        res.status(500).json({ success: false, message: 'Error while creating article' });
     }
 };
