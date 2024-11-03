@@ -1,9 +1,10 @@
 import express from 'express';
-import { getArticles, postArticle } from '../controllers/article.controller.js';
+import { getArticles, postArticle, putArticle } from '../controllers/article.controller.js';
 
 const router = express.Router();
 
-router.post('/', postArticle);
 router.get('/', getArticles);
+router.post('/', postArticle);
+router.put('/:id', putArticle);
 
 export default router;
