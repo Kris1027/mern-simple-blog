@@ -8,7 +8,9 @@ function HomePage() {
         <main>
             <ul>
                 {articles.map((article) => (
-                    <ArticleCard key={article._id} article={article} />
+                    <li key={article._id}>
+                        <ArticleCard article={article} showLink={true} />
+                    </li>
                 ))}
             </ul>
         </main>
