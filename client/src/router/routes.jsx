@@ -1,6 +1,6 @@
 import RootLayout from '../layouts/root-layout';
 
-import { fetchArticles } from '../loaders/fetchArticles';
+import { fetchArticles } from '../loaders/fetch-articles';
 import { addArticle } from '../actions/add-article';
 
 import CreateArticle from '../pages/create-article';
