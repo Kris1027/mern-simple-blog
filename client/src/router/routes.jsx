@@ -4,6 +4,7 @@ import { fetchArticles } from '../loaders/fetch-articles';
 import { fetchSingleArticle } from '../loaders/fetch-single-article';
 import { addArticle } from '../actions/add-article';
 import { deleteArticle } from '../actions/delete-article';
+import { updateArticle } from '../actions/update-article';
 
 import CreateArticle from '../pages/create-article';
 import HomePage from '../pages/home-page';
@@ -13,6 +14,10 @@ export const routes = [
     {
         path: '/deleteArticle/:articleId',
         action: deleteArticle,
+    },
+    {
+        path: '/updateArticle/:articleId',
+        action: updateArticle,
     },
     {
         path: '/',
