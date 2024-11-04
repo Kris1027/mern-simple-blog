@@ -11,6 +11,10 @@ import ArticlePage from '../pages/article-page';
 
 export const routes = [
     {
+        path: '/deleteArticle/:articleId',
+        action: deleteArticle,
+    },
+    {
         path: '/',
         element: <RootLayout />,
         children: [
@@ -28,7 +32,6 @@ export const routes = [
                 path: '/:articleId',
                 element: <ArticlePage />,
                 loader: fetchSingleArticle,
-                action: deleteArticle,
             },
         ],
     },

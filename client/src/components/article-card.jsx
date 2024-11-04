@@ -1,5 +1,4 @@
 import { Form, Link } from 'react-router-dom';
-import { deleteArticle } from '../actions/delete-article';
 
 function ArticleCard({ article, showButtons }) {
     return (
@@ -15,7 +14,7 @@ function ArticleCard({ article, showButtons }) {
             ) : (
                 <div>
                     <button>Edit</button>
-                    <Form method='POST' action={deleteArticle}>
+                    <Form method='POST' action={`/deleteArticle/${article._id}`}>
                         <button>Delete</button>
                     </Form>
                 </div>
