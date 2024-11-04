@@ -15,6 +15,22 @@ export const getArticles = async (req, res) => {
     }
 };
 
+export const getArticle = async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const articles = await Article.findById(id);
+        res.status(200).json({
+            success: true,
+            message: 'Article has been successfully fetched',
+            data: articles,
+        });
+    } catch (error) {
+        console.error(`Error while fetching article: ${error.message}`);
+        res.status(500).json({ success: false, message: 'Error while fetching article' });
+    }
+};
+
 export const postArticle = async (req, res) => {
     const article = req.body;
 
