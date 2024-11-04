@@ -9,7 +9,7 @@ function HomePage() {
             <ul>
                 {articles.map((article) => (
                     <li key={article._id}>
-                        <ArticleCard article={article} showLink={true} />
+                        <ArticleCard article={article} showButtons={false} />
                     </li>
                 ))}
             </ul>

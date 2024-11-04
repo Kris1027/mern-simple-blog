@@ -6,7 +6,7 @@ function ArticlePage() {
 
     return (
         <main>
-            <ArticleCard article={article} showLink={false} />
+            <ArticleCard article={article} showButtons={true} />
         </main>
     );
 }
