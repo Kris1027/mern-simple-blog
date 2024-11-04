@@ -1,4 +1,5 @@
 import { useLoaderData } from 'react-router-dom';
+import ArticleCard from '../components/article-card';
 
 function HomePage() {
     const articles = useLoaderData();
@@ -7,18 +8,7 @@ function HomePage() {
         <main>
             <ul>
                 {articles.map((article) => (
-                    <li key={article._id} className='py-4'>
-                        <h2>{article.title}</h2>
-                        <p>{article.text}</p>
-                        <p>{article.author}</p>
-                        <p>{article.category}</p>
-                        <p>{article.createdAt}</p>
-                        <p>{article.updatedAt}</p>
-                        <div>
-                            <button>Edit</button>
-                            <button>Delete</button>
-                        </div>
-                    </li>
+                    <ArticleCard key={article._id} article={article} />
                 ))}
             </ul>
         </main>
