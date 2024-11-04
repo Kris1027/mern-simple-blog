@@ -1,21 +1,15 @@
+import { Outlet } from 'react-router-dom';
 import Footer from '../components/footer';
 import Navbar from '../components/navbar';
-import { Outlet } from 'react-router-dom';
 
 function RootLayout() {
     return (
-        <div>
-            <header>
+        <div className='bg-green-950 text-green-100'>
+            <div className='max-w-[1280px] mx-auto min-h-screen'>
                 <Navbar />
-            </header>
-
-            <main>
                 <Outlet />
-            </main>
-
-            <footer>
                 <Footer />
-            </footer>
+            </div>
         </div>
     );
 }
