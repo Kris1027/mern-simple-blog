@@ -1,14 +1,15 @@
+import ErrorBoundary from '../error-boundary';
 import RootLayout from '../layouts/root-layout';
 
-import { fetchArticles } from '../loaders/fetch-articles';
-import { fetchSingleArticle } from '../loaders/fetch-single-article';
 import { addArticle } from '../actions/add-article';
 import { deleteArticle } from '../actions/delete-article';
 import { updateArticle } from '../actions/update-article';
+import { fetchArticles } from '../loaders/fetch-articles';
+import { fetchSingleArticle } from '../loaders/fetch-single-article';
 
+import ArticlePage from '../pages/article-page';
 import CreateArticle from '../pages/create-article';
 import HomePage from '../pages/home-page';
-import ArticlePage from '../pages/article-page';
 
 export const routes = [
     {
@@ -22,6 +23,7 @@ export const routes = [
     {
         path: '/',
         element: <RootLayout />,
+        errorElement: <ErrorBoundary />,
         children: [
             {
                 path: '/',
