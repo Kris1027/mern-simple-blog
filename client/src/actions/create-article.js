@@ -1,6 +1,6 @@
 import { API_ENDPOINTS } from '../constants/api-endpoints';
 
-export const addArticle = async ({ request }) => {
+export const createArticle = async ({ request }) => {
     const formData = new URLSearchParams(await request.formData());
     const newArticle = {
         title: formData.get('title'),

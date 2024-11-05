@@ -1,4 +1,5 @@
-import { Form, useActionData } from 'react-router-dom';
+import { useActionData } from 'react-router-dom';
+import ArticleCreateForm from '../components/article-create-form';
 
 function CreateArticlePage() {
     const actionData = useActionData();
@@ -12,15 +13,7 @@ function CreateArticlePage() {
             {actionData && actionData.success && (
                 <div className='text-green-500'>{actionData.message}</div>
             )}
-            <Form method='POST' className='flex flex-col gap-2 text-black'>
-                <input type='text' name='title' placeholder='title' />
-                <textarea name='text' placeholder='text'></textarea>
-                <input type='text' name='author' placeholder='author' />
-                <input type='text' name='category' placeholder='category' />
-                <button type='submit' className='text-white'>
-                    Create Article
-                </button>
-            </Form>
+            <ArticleCreateForm />
         </main>
     );
 }

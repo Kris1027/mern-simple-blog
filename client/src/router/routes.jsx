@@ -1,7 +1,7 @@
 import ErrorBoundary from '../error-boundary';
 import RootLayout from '../layouts/root-layout';
 
-import { addArticle } from '../actions/add-article';
+import { createArticle } from '../actions/create-article';
 import { deleteArticle } from '../actions/delete-article';
 import { updateArticle } from '../actions/update-article';
 import { fetchArticles } from '../loaders/fetch-articles';
@@ -33,7 +33,7 @@ export const routes = [
             {
                 path: '/create',
                 element: <CreateArticlePage />,
-                action: addArticle,
+                action: createArticle,
             },
             {
                 path: '/:articleId',
