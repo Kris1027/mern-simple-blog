@@ -1,3 +1,5 @@
+import { API_ENDPOINTS } from '../constants/api-endpoints';
+
 export const updateArticle = async ({ params, request }) => {
     const id = params.articleId;
     const formData = new URLSearchParams(await request.formData());
@@ -9,7 +11,7 @@ export const updateArticle = async ({ params, request }) => {
     };
 
     try {
-        const res = await fetch(`/api/articles/${id}`, {
+        const res = await fetch(API_ENDPOINTS.ARTICLE(id), {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

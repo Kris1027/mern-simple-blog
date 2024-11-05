@@ -1,3 +1,5 @@
+import { API_ENDPOINTS } from '../constants/api-endpoints';
+
 export const addArticle = async ({ request }) => {
     const formData = new URLSearchParams(await request.formData());
     const newArticle = {
@@ -10,7 +12,7 @@ export const addArticle = async ({ request }) => {
     if (!newArticle.title || !newArticle.text || !newArticle.author || !newArticle.category) {
         return { success: false, message: 'Please fill in all the fields' };
     }
-    const res = await fetch('/api/articles/', {
+    const res = await fetch(API_ENDPOINTS.ARTICLES, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
