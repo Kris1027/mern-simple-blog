@@ -20,7 +20,7 @@ function ArticleUpdateForm({ article, setIsEdit, fetcher }) {
     return (
         <fetcher.Form
             method='POST'
-            action={`/updateArticle/${article._id}`}
+            action={`/articles/update/${article._id}`}
             className='text-black flex flex-col gap-1'
             onSubmit={() => setIsEdit((prevState) => !prevState)}
         >

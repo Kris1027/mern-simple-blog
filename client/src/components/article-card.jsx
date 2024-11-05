@@ -21,11 +21,11 @@ function ArticleCard({ article, showButtons }) {
                 <ArticleUpdateForm article={article} fetcher={fetcher} setIsEdit={setIsEdit} />
             )}
             {!showButtons ? (
-                <Link to={article._id}>Show more</Link>
+                <Link to={`/articles/${article._id}`}>Show more</Link>
             ) : (
                 <div>
                     <button onClick={() => setIsEdit((prevState) => !prevState)}>Edit</button>
-                    <fetcher.Form method='POST' action={`/deleteArticle/${article._id}`}>
+                    <fetcher.Form method='POST' action={`/articles/delete/${article._id}`}>
                         <button>Delete</button>
                     </fetcher.Form>
                 </div>

@@ -13,11 +13,11 @@ import HomePage from '../pages/home-page';
 
 export const routes = [
     {
-        path: '/deleteArticle/:articleId',
+        path: '/articles/delete/:articleId',
         action: deleteArticle,
     },
     {
-        path: '/updateArticle/:articleId',
+        path: '/articles/update/:articleId',
         action: updateArticle,
     },
     {
@@ -26,17 +26,17 @@ export const routes = [
         errorElement: <ErrorBoundary />,
         children: [
             {
-                path: '/',
+                path: '',
                 element: <HomePage />,
                 loader: fetchArticles,
             },
             {
-                path: '/create',
+                path: 'create',
                 element: <CreateArticlePage />,
                 action: createArticle,
             },
             {
-                path: '/:articleId',
+                path: 'articles/:articleId',
                 element: <ArticlePage />,
                 loader: fetchSingleArticle,
             },

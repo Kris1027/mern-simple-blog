@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { Form } from 'react-router-dom';
+import { Form, useSubmit } from 'react-router-dom';
 
 function ArticleCreateForm() {
+    const submit = useSubmit();
     const [formData, setFormData] = useState({
         title: '',
         text: '',
@@ -47,7 +48,7 @@ function ArticleCreateForm() {
             return;
         }
 
-        e.target.submit();
+        submit(e.target, { method: 'post', action: '/create' });
     };
 
     return (
