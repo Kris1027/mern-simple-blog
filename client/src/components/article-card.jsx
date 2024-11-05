@@ -2,9 +2,12 @@ import { useState } from 'react';
 import { Link, useFetcher } from 'react-router-dom';
 import ArticleDetails from './article-details';
 import ArticleUpdateForm from './article-update-form';
+import { createPortal } from 'react-dom';
+import ConfirmationModal from './confirmation-modal';
 
 function ArticleCard({ article, showButtons }) {
     const [isEdit, setIsEdit] = useState(false);
+    const [showModal, setShowModal] = useState(false);
     const fetcher = useFetcher();
 
     return (
@@ -25,9 +28,21 @@ function ArticleCard({ article, showButtons }) {
             ) : (
                 <div>
                     <button onClick={() => setIsEdit((prevState) => !prevState)}>Edit</button>
-                    <fetcher.Form method='POST' action={`/articles/delete/${article._id}`}>
-                        <button>Delete</button>
-                    </fetcher.Form>
+                    <button onClick={() => setShowModal((prev) => !prev)}>Delete</button>
+                    {showModal &&
+                        createPortal(
+                            <ConfirmationModal
+                                onClose={() => setShowModal((prev) => !prev)}
+                                onConfirm={() => {
+                                    fetcher.submit(null, {
+                                        method: 'POST',
+                                        action: `/articles/delete/${article._id}`,
+                                    });
+                                    setShowModal((prev) => !prev);
+                                }}
+                            />,
+                            document.getElementById('root-modal')
+                        )}
                 </div>
             )}
         </div>
