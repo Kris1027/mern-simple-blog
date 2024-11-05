@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link, useFetcher } from 'react-router-dom';
+import ArticleDetails from './article-details';
 import ArticleUpdateForm from './article-update-form';
 
 function ArticleCard({ article, showButtons }) {
@@ -15,17 +16,10 @@ function ArticleCard({ article, showButtons }) {
                 <div className='text-green-500'>{fetcher.data.message}</div>
             )}
             {!isEdit ? (
-                <>
-                    <h2>{article.title}</h2>
-                    <p>{article.text}</p>
-                    <p>{article.author}</p>
-                    <p>{article.category}</p>
-                </>
+                <ArticleDetails article={article} />
             ) : (
                 <ArticleUpdateForm article={article} fetcher={fetcher} setIsEdit={setIsEdit} />
             )}
-            <p>{article.createdAt}</p>
-            <p>{article.updatedAt}</p>
             {!showButtons ? (
                 <Link to={article._id}>Show more</Link>
             ) : (
