@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import LoadingSpinner from './loading-spinner';
 
 function ArticleUpdateForm({ article, setIsEdit, fetcher }) {
     const isSubmitting = fetcher.state === 'submitting';
@@ -16,6 +17,8 @@ function ArticleUpdateForm({ article, setIsEdit, fetcher }) {
             [e.target.name]: e.target.value,
         }));
     };
+
+    if (isSubmitting) return <LoadingSpinner />;
 
     return (
         <fetcher.Form

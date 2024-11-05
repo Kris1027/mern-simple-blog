@@ -1,8 +1,11 @@
 import { useState } from 'react';
-import { Form, useSubmit } from 'react-router-dom';
+import { Form, useNavigation, useSubmit } from 'react-router-dom';
+import LoadingSpinner from './loading-spinner';
 
 function ArticleCreateForm() {
     const submit = useSubmit();
+    const navigation = useNavigation();
+    const isSubmitting = navigation.state === 'submitting';
     const [formData, setFormData] = useState({
         title: '',
         text: '',
@@ -50,6 +53,8 @@ function ArticleCreateForm() {
 
         submit(e.target, { method: 'post', action: '/create' });
     };
+
+    if (isSubmitting) return <LoadingSpinner />;
 
     return (
         <Form method='POST' onSubmit={handleSubmit} className='flex flex-col gap-2 text-black'>

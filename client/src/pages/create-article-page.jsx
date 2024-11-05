@@ -10,9 +10,6 @@ function CreateArticlePage() {
             {actionData && actionData.success === false && (
                 <div className='text-red-500'>{actionData.message}</div>
             )}
-            {actionData && actionData.success && (
-                <div className='text-green-500'>{actionData.message}</div>
-            )}
             <ArticleCreateForm />
         </main>
     );
