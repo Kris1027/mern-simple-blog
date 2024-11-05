@@ -1,6 +1,6 @@
 import { Form, useActionData } from 'react-router-dom';
 
-function CreateArticle() {
+function CreateArticlePage() {
     const actionData = useActionData();
 
     return (
@@ -25,4 +25,4 @@ function CreateArticle() {
     );
 }
 
-export default CreateArticle;
+export default CreateArticlePage;

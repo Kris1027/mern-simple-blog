@@ -8,7 +8,7 @@ import { fetchArticles } from '../loaders/fetch-articles';
 import { fetchSingleArticle } from '../loaders/fetch-single-article';
 
 import ArticlePage from '../pages/article-page';
-import CreateArticle from '../pages/create-article';
+import CreateArticlePage from '../pages/create-article-page';
 import HomePage from '../pages/home-page';
 
 export const routes = [
@@ -32,7 +32,7 @@ export const routes = [
             },
             {
                 path: '/create',
-                element: <CreateArticle />,
+                element: <CreateArticlePage />,
                 action: addArticle,
             },
             {
