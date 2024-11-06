@@ -1,7 +1,7 @@
 function Footer() {
     return (
         <footer className='bg-white/80 backdrop-blur-md shadow-sm p-4 mx-auto flex items-center justify-between'>
-            <p className='text-sm text-gray-600'>
+            <p className='text-sm text-gray-600 text-center'>
                 &copy; {new Date().getFullYear()} MERN Simple Blog. All rights reserved. Designed &
                 crafted with love by{' '}
                 <a
