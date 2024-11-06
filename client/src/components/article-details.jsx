@@ -1,6 +1,7 @@
 import { formatDate } from '../utils/format-date';
+import { truncateText } from '../utils/truncate-text';
 
-function ArticleDetails({ article }) {
+function ArticleDetails({ article, truncate = false }) {
     return (
         <div className='space-y-6'>
             {article.image && (
@@ -31,7 +32,9 @@ function ArticleDetails({ article }) {
 
                 <h2 className='text-2xl font-bold text-gray-900 leading-tight'>{article.title}</h2>
 
-                <p className='text-gray-600 leading-relaxed whitespace-pre-wrap'>{article.text}</p>
+                <p className='text-gray-600 leading-relaxed whitespace-pre-wrap'>
+                    {truncate ? truncateText(article.text) : article.text}
+                </p>
 
                 <div className='pt-4 border-t border-gray-100'>
                     <div className='flex items-center gap-2 text-sm text-gray-500'>

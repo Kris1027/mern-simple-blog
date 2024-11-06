@@ -29,7 +29,7 @@ function ArticleCard({ article, showButtons }) {
             <div className='p-6'>
                 {!isEdit ? (
                     <>
-                        <ArticleDetails article={article} />
+                        <ArticleDetails article={article} truncate={!showButtons} />
                         <div className='mt-6 flex gap-3'>
                             {!showButtons ? (
                                 <Link
