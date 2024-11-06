@@ -24,7 +24,7 @@ function ArticleUpdateForm({ article, fetcher, setIsEdit }) {
 
     return (
         <form onSubmit={handleSubmit} className='space-y-6'>
-            <div className='space-y-4 text-gray-600'>
+            <div className='space-y-4'>
                 <div className='flex flex-col gap-2'>
                     <label htmlFor='title' className='font-medium text-gray-700'>
                         Title
