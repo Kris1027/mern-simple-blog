@@ -9,6 +9,7 @@ function ArticleCreateForm() {
     const [formData, setFormData] = useState({
         title: '',
         text: '',
+        image: '',
         author: '',
         category: '',
     });
@@ -65,7 +66,7 @@ function ArticleCreateForm() {
                     className={errors.title ? 'border-red-500 border-2' : ''}
                     type='text'
                     name='title'
-                    placeholder='title'
+                    placeholder='Title'
                 />
                 {errors.title && <span className='text-red-500 text-sm'>{errors.title}</span>}
             </div>
@@ -76,9 +77,21 @@ function ArticleCreateForm() {
                     onChange={handleChange}
                     className={errors.text ? 'border-red-500 border-2' : ''}
                     name='text'
-                    placeholder='text'
+                    placeholder='Text'
                 ></textarea>
                 {errors.text && <span className='text-red-500 text-sm'>{errors.text}</span>}
+            </div>
+
+            <div className='flex flex-col'>
+                <input
+                    value={formData.image}
+                    onChange={handleChange}
+                    className={errors.image ? 'border-red-500 border-2' : ''}
+                    type='text'
+                    name='image'
+                    placeholder='Image URL'
+                />
+                {errors.image && <span className='text-red-500 text-sm'>{errors.image}</span>}
             </div>
 
             <div className='flex flex-col'>
@@ -88,7 +101,7 @@ function ArticleCreateForm() {
                     className={errors.author ? 'border-red-500 border-2' : ''}
                     type='text'
                     name='author'
-                    placeholder='author'
+                    placeholder='Author'
                 />
                 {errors.author && <span className='text-red-500 text-sm'>{errors.author}</span>}
             </div>
@@ -100,7 +113,7 @@ function ArticleCreateForm() {
                     className={errors.category ? 'border-red-500 border-2' : ''}
                     type='text'
                     name='category'
-                    placeholder='category'
+                    placeholder='Category'
                 />
                 {errors.category && <span className='text-red-500 text-sm'>{errors.category}</span>}
             </div>

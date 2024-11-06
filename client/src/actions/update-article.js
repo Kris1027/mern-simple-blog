@@ -6,6 +6,7 @@ export const updateArticle = async ({ params, request }) => {
     const updatedArticle = {
         title: formData.get('title'),
         text: formData.get('text'),
+        image: formData.get('image'),
         author: formData.get('author'),
         category: formData.get('category'),
     };

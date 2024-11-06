@@ -7,6 +7,7 @@ export const createArticle = async ({ request }) => {
         const newArticle = {
             title: formData.get('title'),
             text: formData.get('text'),
+            image: formData.get('image'),
             author: formData.get('author'),
             category: formData.get('category'),
         };
