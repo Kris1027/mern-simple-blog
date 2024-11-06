@@ -4,12 +4,12 @@ import Navbar from '../components/navbar';
 
 function RootLayout() {
     return (
-        <div className='min-h-screen bg-gradient-to-b from-gray-50 to-white'>
-            <div className='max-w-[1280px] mx-auto'>
+        <div className='min-h-screen bg-gradient-to-b from-gray-50 to-white flex flex-col'>
+            <div className='max-w-[1280px] mx-auto flex-grow'>
                 <Navbar />
                 <Outlet />
-                <Footer />
             </div>
+            <Footer />
         </div>
     );
 }

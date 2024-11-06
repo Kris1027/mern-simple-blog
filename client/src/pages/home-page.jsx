@@ -10,7 +10,7 @@ function HomePage() {
     if (isLoading) return <LoadingSpinner />;
 
     return (
-        <main className='min-h-screen bg-gradient-to-b from-gray-50 to-white pt-20'>
+        <main className='bg-gradient-to-b from-gray-50 to-white pt-20'>
             <div className='max-w-7xl mx-auto px-4 py-8'>
                 <h1 className='text-4xl font-bold text-gray-800 mb-8 text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'>
                     Latest Articles
