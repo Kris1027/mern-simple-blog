@@ -83,7 +83,7 @@ Make sure you have the following installed on your machine:
 Clone the repository to your local machine using the following command:
 
 ````bash
-git clone <repository-url>```
+git clone <git@github.com:Kris1027/mern-simple-blog.git>```
 ````
 
 ### Step 2: Set Up the Server
