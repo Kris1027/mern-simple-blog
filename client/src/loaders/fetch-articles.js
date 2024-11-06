@@ -5,5 +5,5 @@ export const fetchArticles = async () => {
     if (!res.ok) throw new Error('Failed to load articles', { status: 500 });
 
     const data = await res.json();
-    return data.data;
+    return data.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 };

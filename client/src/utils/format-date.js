@@ -9,5 +9,5 @@ export const formatDate = (dateString) => {
         minute: '2-digit',
     };
 
-    return date.toLocaleDateString('pl-PL', options).replace(',', ' •').replace(/\./g, '');
+    return date.toLocaleDateString('en-US', options).replace(',', ' •').replace(/\./g, '');
 };
