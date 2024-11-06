@@ -10,8 +10,10 @@ function ArticlePage() {
     if (isLoading) return <LoadingSpinner />;
 
     return (
-        <main>
-            <ArticleCard article={article} showButtons={true} />
+        <main className='min-h-screen bg-gradient-to-b from-gray-50 to-white pt-20'>
+            <div className='max-w-4xl mx-auto px-4 py-8'>
+                <ArticleCard article={article} showButtons={true} />
+            </div>
         </main>
     );
 }
