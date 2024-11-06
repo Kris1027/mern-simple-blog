@@ -28,36 +28,37 @@ function ArticleCard({ article, showButtons }) {
 
             <div className='p-6'>
                 {!isEdit ? (
-                    <ArticleDetails article={article} />
+                    <>
+                        <ArticleDetails article={article} />
+                        <div className='mt-6 flex gap-3'>
+                            {!showButtons ? (
+                                <Link
+                                    to={`/articles/${article._id}`}
+                                    className='inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-[1.02]'
+                                >
+                                    Read More
+                                </Link>
+                            ) : (
+                                <div className='flex gap-3'>
+                                    <button
+                                        onClick={() => setIsEdit((prev) => !prev)}
+                                        className='px-4 py-2 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors text-sm font-medium'
+                                    >
+                                        Edit
+                                    </button>
+                                    <button
+                                        onClick={() => setShowModal(true)}
+                                        className='px-4 py-2 rounded-full bg-red-50 text-red-600 hover:bg-red-100 transition-colors text-sm font-medium'
+                                    >
+                                        Delete
+                                    </button>
+                                </div>
+                            )}
+                        </div>
+                    </>
                 ) : (
                     <ArticleUpdateForm article={article} fetcher={fetcher} setIsEdit={setIsEdit} />
                 )}
-
-                <div className='mt-6 flex gap-3'>
-                    {!showButtons ? (
-                        <Link
-                            to={`/articles/${article._id}`}
-                            className='inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-[1.02]'
-                        >
-                            Read More
-                        </Link>
-                    ) : (
-                        <div className='flex gap-3'>
-                            <button
-                                onClick={() => setIsEdit((prev) => !prev)}
-                                className='px-4 py-2 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors text-sm font-medium'
-                            >
-                                {isEdit ? 'Cancel' : 'Edit'}
-                            </button>
-                            <button
-                                onClick={() => setShowModal(true)}
-                                className='px-4 py-2 rounded-full bg-red-50 text-red-600 hover:bg-red-100 transition-colors text-sm font-medium'
-                            >
-                                Delete
-                            </button>
-                        </div>
-                    )}
-                </div>
             </div>
 
             {showModal &&
