@@ -142,3 +142,12 @@ Once both the server and client are running, you can access the application in y
 
 -   Ensure that your MongoDB server is running before starting the application.
 -   If you encounter any issues, check the console for error messages and ensure all dependencies are correctly installed.
+
+![modified_image](https://github.com/user-attachments/assets/f7dc77a5-5168-4aca-86a3-18c95f23a49c)
+![modified_image (1)](https://github.com/user-attachments/assets/693c41ac-62f4-4c1c-bb11-dc72ba321a4f)
+![modified_image (2)](https://github.com/user-attachments/assets/204d4caf-db59-4441-9397-271bdd3551bc)
+
+
+
+
+
